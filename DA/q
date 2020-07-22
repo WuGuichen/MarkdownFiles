@@ -1,0 +1,113 @@
+NVIM(1) BSD General Commands ManualNVIM(1)
+
+NNAAMMEE
+     nnvviimm — edit text
+
+SSYYNNOOPPSSIISS
+     nnvviimm [_o_p_t_i_o_n_s] [_f_i_l_e _._._.]
+     nnvviimm [_o_p_t_i_o_n_s] --
+     nnvviimm [_o_p_t_i_o_n_s] --tt _t_a_g
+     nnvviimm [_o_p_t_i_o_n_s] --qq [_e_r_r_o_r_f_i_l_e]
+
+DDEESSCCRRIIPPTTIIOONN
+     nnvviimm is a text editor based on Vim.
+     Start nnvviimm followed by any number of
+     options and/or files:
+
+           nvim [options] [file ...]
+
+     Commands in nnvviimm begin with colon
+     (‘:’).  Type ":help subject" to get
+     help on a specific subject.  Use
+     <Tab> and CTRL-D to complete subjects
+     (":help cmdline-completion").
+
+     The "quickref" help section is a con‐
+     densed reference of editor features:
+           :help quickref
+
+     If you are new to Vim/Nvim, start
+     with the 30-minute tutorial:
+           :Tutor
+
+     After installing/updating Nvim, it's
+     a good idea to run the self-check:
+           :checkhealth
+
+     _f_i_l_e _._._.    File(s) to edit.  Opens
+                 one buffer per file.  To
+                 switch between buffers,
+                 use the ::nneexxtt and
+                 ::pprreevviioouuss commands.
+
+     --           Reads text from standard
+                 input until EOF, then
+                 opens a buffer with that
+                 text.  User input is read
+                 from standard error,
+                 which should be a termi‐
+                 nal.
+
+OOPPTTIIOONNSS
+     --tt _t_a_g      Finds _t_a_g in the tags
+                 file, the associated file
+                 becomes the current file
+                 and the associated com‐
+                 mand is executed.  Cursor
+                 is positioned at the tag
+                 location in the file.
+                 ::hheellpp ttaagg--ccoommmmaannddss
+
+     --qq [_e_r_r_o_r_f_i_l_e]
+                 QuickFix mode.  Display
+                 the first error in
+                 _e_r_r_o_r_f_i_l_e.  If _e_r_r_o_r_f_i_l_e
+                 is omitted, the value of
+                 the 'errorfile' option is
+                 used (defaults to
+                 eerrrroorrss..eerrrr).  Further er‐
+                 rors can be jumped to
+                 with the ::ccnneexxtt command.
+                 ::hheellpp qquuiicckkffiixx
+
+     ----          End of options.  Remain‐
+                 ing arguments are treated
+                 as literal file names,
+                 including filenames
+                 starting with hyphen
+                 (‘-’).
+
+     --ee          Ex mode, reading stdin as
+                 Ex commands.  ::hheellpp EExx--
+                 mmooddee
+
+     --EE          Ex mode, reading stdin as
+                 text.  ::hheellpp EExx--mmooddee
+
+     --eess         Silent (non-interactive)
+                 Ex mode, reading stdin as
+                 Ex commands.  Useful for
+                 scripting because it does
+                 NOT start a UI, unlike
+                 --ee.  ::hheellpp ssiilleenntt--mmooddee
+
+     --EEss         Silent (non-interactive)
+                 Ex mode, reading stdin as
+                 text.  Useful for script‐
+                 ing because it does NOT
+                 start a UI, unlike --EE.
+                 ::hheellpp ssiilleenntt--mmooddee
+
+     --dd          Diff mode.  Show the dif‐
+                 ference between two to
+                 four files, similar to
+                 sdiff(1).  ::hheellpp ddiiffff
+
+     --RR          Read-only mode.  Sets the
+                 'readonly' option.  Im‐
+                 plies --nn.  Buffers can
+                 still be edited, but can‐
+                 not be written to disk if
+                 already associated with a
+                 file.  To overwrite a
+         
